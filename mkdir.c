@@ -1,6 +1,10 @@
 #include "utils.h"
 
 static void mkd(const char* b, const char* e) {
+    if (b == e) {
+        return;
+    }
+
     if (mkdir(substr(b, e - b), 0777) == 0) {
     } else {
         if (errno == EEXIST) {
