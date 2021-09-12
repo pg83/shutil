@@ -6,3 +6,4 @@ $CC $CPPFLAGS $CFLAGS $LDFLAGS echo.c -o echo
 $CC $CPPFLAGS $CFLAGS $LDFLAGS dirname.c -o dirname
 $CC $CPPFLAGS $CFLAGS $LDFLAGS which.c -o which
 $CC $CPPFLAGS $CFLAGS $LDFLAGS rm.c -o rm
+$CC $CPPFLAGS $CFLAGS $LDFLAGS test.c -O0 -g -o test
