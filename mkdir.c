@@ -14,12 +14,11 @@ static void mkd(const char* b, const char* e) {
     }
 }
 
-int main(int argc, char** argv) {
-    char* path = argc > 1 ? argv[1] : strdup("");
-    char* cur;
+static void mkpd(const char* path) {
+    const char* cur;
 
     if (*path == '-') {
-        path = argv[2];
+        return;
     }
 
     for (cur = path; *cur; ++cur) {
@@ -29,4 +28,12 @@ int main(int argc, char** argv) {
     }
 
     mkd(path, cur);
+}
+
+int main(int argc, char** argv) {
+    for (char** path = argv + 1; *path; ++path) {
+        mkpd(*path);
+    }
+
+    exit(errno = 0);
 }
