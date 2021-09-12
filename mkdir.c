@@ -3,16 +3,19 @@
 static void mkd(const char* b, const char* e) {
     if (mkdir(substr(b, e - b), 0777) == 0) {
     } else {
-        err(1, "mkdir");
+        if (errno == EEXIST) {
+        } else {
+            err(1, "mkdir");
+        }
     }
 }
 
 int main(int argc, char** argv) {
-    char* path = argv[1];
+    char* path = argc > 1 ? argv[1] : strdup("");
     char* cur;
 
     if (*path == '-') {
-        path = argv[1];
+        path = argv[2];
     }
 
     for (cur = path; *cur; ++cur) {
