@@ -11,4 +11,5 @@ int main(int argc, char** argv) {
     }
 
     write(1, start, end - start);
+    write(1, "\n", 1);
 }
