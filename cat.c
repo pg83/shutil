@@ -13,4 +13,6 @@ int main(int argc, char** argv) {
     while ((n = fread(buf, 1, sizeof(buf), in)) > 0) {
         fwrite(buf, 1, n, out);
     }
+
+    exit(errno = 0);
 }

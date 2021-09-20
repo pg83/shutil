@@ -12,4 +12,6 @@ int main(int argc, char** argv) {
             write(1, &ch, 1);
         }
     }
+
+    exit(errno = 0);
 }
