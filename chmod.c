@@ -1,7 +1,9 @@
 #include "utils.h"
 
 int main(int argc, char** argv) {
-    chmod(argv[2], atoi(argv[1]));
+    for (++argv; *argv; ++argv) {
+        chmod(*argv, 493);
+    }
 
     exit(errno = 0);
 }
